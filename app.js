@@ -152,6 +152,7 @@
   }
   function giftCard(g) {
     if(g.priority)return `<article class="gift-card featured-gift-card">
+      ${g.productImage ? `<img class="featured-gift-product-image" src="${esc(g.productImage)}" alt="${esc(g.name)}商品图" loading="lazy" decoding="async">` : ''}
       <span class="tag gold">本月主推</span>
       <h3>${esc(g.name)}</h3>
       <p class="gift-price">${esc(g.estimatedPriceRange || '价格以商品页为准')}</p>

@@ -14,3 +14,12 @@
 .central-feedback-form input,.central-feedback-form select,.central-feedback-form textarea{width:100%;padding:11px 13px;border:1px solid #ddcfe1;border-radius:10px;background:white;color:inherit}
 .central-feedback-form button{justify-self:start}
 .feedback-submit-status{min-height:1.5em;color:#765183}
+
+.featured-gift-product-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+}

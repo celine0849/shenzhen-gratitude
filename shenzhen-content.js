@@ -123,7 +123,7 @@
       }
     ]
   }
-].map(gift => ({...gift, priority: true}));
+].map(gift => ({...gift, priority: true, productImage: `assets/featured/${gift.id}-product.webp`}));
   updated.gifts.items.forEach(gift => { gift.priority = false; });
   updated.gifts.items = [...featuredGifts,...updated.gifts.items];
   updated.gifts.recommendedIds = featuredGifts.map(gift => gift.id);
