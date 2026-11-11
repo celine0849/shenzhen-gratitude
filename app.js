@@ -170,6 +170,13 @@
       </div>
       ${g.shareText ? `<button class="btn" type="button" data-copy-order="${esc(g.id)}">复制${esc(g.platform)}购买口令</button>` : ''}
       `}
+      ${g.id === 'featured-wreath-scarecrow' ? `<details class="gift-delivery">
+        <summary>查看海报</summary>
+        <div class="gift-link featured-gift-actions">
+          <a class="btn" href="assets/gift-posters/wreath-warm-gold.jpg" target="_blank" rel="noopener noreferrer">暖光居家版 ↗</a>
+          <a class="btn" href="assets/gift-posters/wreath-shenzhen-bay-gold.jpg" target="_blank" rel="noopener noreferrer">深圳湾夜景版 ↗</a>
+        </div>
+      </details>` : ''}
       ${g.orderNotes ? `<details class="gift-delivery" open><summary>下单、贺卡与发货</summary><ul>${g.orderNotes.map(note => `<li>${esc(note)}</li>`).join('')}</ul></details>` : ''}
     </article>`;
     const availability=plain(g.availability||'');
