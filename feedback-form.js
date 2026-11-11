@@ -6,7 +6,7 @@
       embeddedUrl.searchParams.set('embedded', 'true');
       embeddedUrl.searchParams.set('inner_redirect', 'true');
       const formUrl = embeddedUrl.toString();
-      root.innerHTML = `<section class="surface central-feedback-form"><h3>把使用感受和建议留在这里</h3><iframe class="jinshuju-form-frame" title="反馈与建议" loading="lazy"></iframe><p><a class="jinshuju-open-link" target="_blank" rel="noopener noreferrer">表单无法显示？在浏览器中打开</a></p></section>`;
+      root.innerHTML = `<section class="surface central-feedback-form"><h3>把使用感受和建议留在这里</h3><p><a class="jinshuju-open-link" target="_blank" rel="noopener noreferrer">表单无法显示？在浏览器中打开</a></p><iframe class="jinshuju-form-frame" title="反馈与建议" loading="lazy"></iframe></section>`;
       const frame = root.querySelector('iframe');
       let formLoaded = false;
       frame.addEventListener('load', () => {
@@ -15,7 +15,7 @@
         formLoaded = true;
       });
       frame.src = formUrl;
-      root.querySelector('a').href = formUrl;
+      root.querySelector('a').href = window.GRATITUDE_JINSHUJU.feedbackFormUrl;
       return;
     }
     root.innerHTML = `<form class="surface central-feedback-form" id="central-feedback-form">
