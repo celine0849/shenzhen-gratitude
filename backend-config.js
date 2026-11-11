@@ -1,0 +1,1 @@
+window.GRATITUDE_SUPABASE_ENABLED = false;
