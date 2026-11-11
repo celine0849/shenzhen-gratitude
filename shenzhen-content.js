@@ -16,22 +16,8 @@
   const cardNames = {champagne:'鹏城鎏金', haipai:'暮云雅紫', amber:'榕影暖杏', jade:'梧桐青绿', bluegold:'湾畔蓝金'};
   for (const card of updated.action.cards.online || []) if (cardNames[card.theme]) card.title = card.styleName = cardNames[card.theme];
   const gifts = updated.gifts.items;
-  updated.gifts.items = gifts.filter(gift => gift.id !== 'g04');
+  updated.gifts.items = gifts.filter(gift => !['g01', 'g02', 'g04'].includes(gift.id));
   const byId = id => updated.gifts.items.find(gift => gift.id === id);
-  Object.assign(byId('g01'), {
-    name: '平安金融中心金属书签',
-    platform: '', sourceTitle: '', sourceRef: '', checkedAt: '',
-    purchaseUrl: '', fallbackUrl: '', shopText: '深圳供应商待确认',
-    linkType: '待确认',
-    selectionNote: '选择深圳地标款；下单前核对实物材质、礼盒包装与到货价格。'
-  });
-  Object.assign(byId('g02'), {
-    name: '深圳莲花山金属冰箱贴',
-    platform: '', sourceTitle: '', sourceRef: '', checkedAt: '',
-    purchaseUrl: '', fallbackUrl: '', shopText: '深圳供应商待确认',
-    linkType: '待确认',
-    selectionNote: '选择深圳莲花山款；下单前核对价格和深圳地址配送。'
-  });
   Object.assign(byId('g15'), {
     name: '真丝睡眠眼罩',
     platform: '京东',
