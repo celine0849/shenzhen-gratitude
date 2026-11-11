@@ -156,11 +156,19 @@
       <h3>${esc(g.name)}</h3>
       <p class="gift-price">${esc(g.estimatedPriceRange || '价格以商品页为准')}</p>
       <p class="gift-use">${esc(g.components)}</p>
+      ${g.purchaseItems?.length ? `<ul class="gift-use">${g.purchaseItems.map((item, index) => `<li>
+        <span>${esc(item.name)}</span>
+        <div class="gift-link featured-gift-actions">
+          <a class="btn primary" href="${esc(safeUrl(item.url))}" target="_blank" rel="noopener noreferrer">前往1688 ↗</a>
+          <button class="btn" type="button" data-copy-order="${esc(g.id)}" data-order-item="${index}">复制口令</button>
+        </div>
+      </li>`).join('')}</ul>` : `
       <div class="gift-link featured-gift-actions">
         <a class="btn primary" href="${esc(safeUrl(g.purchaseUrl))}" target="_blank" rel="noopener noreferrer">前往${esc(g.platform)}下单 ↗</a>
         <button class="btn" type="button" data-gift-materials="${esc(g.id)}">话术与海报</button>
       </div>
       ${g.shareText ? `<button class="btn" type="button" data-copy-order="${esc(g.id)}">复制${esc(g.platform)}购买口令</button>` : ''}
+      `}
       ${g.orderNotes ? `<details class="gift-delivery" open><summary>下单、贺卡与发货</summary><ul>${g.orderNotes.map(note => `<li>${esc(note)}</li>`).join('')}</ul></details>` : ''}
     </article>`;
     const availability=plain(g.availability||'');
@@ -278,7 +286,8 @@
       if(button.dataset.requestGift){window.openFeaturedRequest?.(button.dataset.requestGift);return;}
       if(button.dataset.copyOrder){
         const gift=data.gifts.items.find(item=>item.id===button.dataset.copyOrder);
-        if(gift?.shareText)copy(gift.shareText,`购买口令已复制，可打开${gift.platform}使用`);
+        const order = button.dataset.orderItem == null ? gift : gift?.purchaseItems?.[Number(button.dataset.orderItem)];
+        if(order?.shareText)copy(order.shareText,`购买口令已复制，可打开${order === gift ? gift.platform : '手机阿里或支付宝'}使用`);
         return;
       }
       if(button.dataset.giftMaterials){window.openGiftMaterials?.(button.dataset.giftMaterials);return;}

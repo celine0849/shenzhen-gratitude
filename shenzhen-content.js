@@ -113,6 +113,29 @@
       "featured-candle-shenzhen.jpg"
     ],
     "shareText": "【淘宝】https://e.tb.cn/h.jRQBsn2FTYd0whw?tk=pliL6dT9xWr CZ057 「闺蜜生日礼物送女生礼盒香薰蜡烛卧室伴娘伴手礼送礼实用小礼物女」"
+  },
+  {
+    "id": "featured-wreath-scarecrow",
+    "name": "花环稻草人礼盒",
+    "platform": "1688",
+    "components": "秋季花环门挂、稻草人公仔、丝带手提礼品袋，三件分别采购后自行组合。",
+    "purchaseItems": [
+      {
+        "name": "秋季花环门挂",
+        "url": "https://qr.1688.com/s/VveQ76Ak",
+        "shareText": "【跨境亚马逊秋季花环门挂感恩节丰收节挂饰仿真人造枫叶向日葵花环】复制￥c3GUN4Q00a8ae￥，打开【手机阿里】或【支付宝-点首页进行搜索】查看：https://qr.1688.com/s/VveQ76Ak CZ1718"
+      },
+      {
+        "name": "稻草人公仔",
+        "url": "https://qr.1688.com/s/DBQt7WbO",
+        "shareText": "【跨境感恩节稻草人公仔系列装饰品丰收季枫叶草帽地精侏儒娃娃摆件】复制￥HnA57Dd00Y8ae￥，打开【手机阿里】或【支付宝-点首页进行搜索】查看：https://qr.1688.com/s/DBQt7WbO CZ2253"
+      },
+      {
+        "name": "丝带手提礼品袋",
+        "url": "https://qr.1688.com/s/cg89quIC",
+        "shareText": "【高级感礼品袋手提服装包装袋跨境纸袋配丝带送礼礼物袋伴手礼袋】复制￥vRXX04z64wuan￥，打开【手机阿里】或【支付宝-点首页进行搜索】查看：https://qr.1688.com/s/cg89quIC CZ9708"
+      }
+    ]
   }
 ].map(gift => ({...gift, priority: true}));
   updated.gifts.items.forEach(gift => { gift.priority = false; });
